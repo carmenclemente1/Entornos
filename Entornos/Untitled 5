@@ -1,0 +1,34 @@
+@startuml
+:profesor:
+	usecase caso1 as "Completar un acta con las notas de los alumnos
+	--
+	Añadir o borrar un alumno de un acta
+	--
+	Integrar la actas de varios grupos de una misma asignatura en una sola acta"
+profesor --> caso1 
+:profesor: --> (poner notas)
+(poner notas) --> (operaciones calculadora)
+	(operaciones calculadora) --> (sumar)
+	(operaciones calculadora) --> (restar)
+	(operaciones calculadora) --> (multiplicar)
+	(operaciones calculadora) --> (division)
+:profesor: --> (estadistica) 
+:profesor: --> (grafico)
+:administrador: 
+		:administrador: --> (gestion ABMC alumnos)
+			(gestion ABMC alumnos) --> (alta)
+			(gestion ABMC alumnos) --> (baja)
+			(gestion ABMC alumnos) --> (modificacion)
+			(gestion ABMC alumnos) --> (consulta historial academico)
+		:administrador: --> (Matriculacion)
+		:administrador: --> (Gestion Asignaturas)
+		:administrador: --> (Gestion Titulaciones)
+		:administrador: --> (Gestion Grupos)
+
+			(Matriculacion) --> (validar usuario)
+			(Gestion Asignaturas) --> (validar usuario)
+			(Gestion Titulaciones) --> (validar usuario)
+			(Gestion Grupos) --> (validar usuario)
+			(Gestion ABMC Alumnos) --> (validar usuario)
+
+@enduml

@@ -1,0 +1,56 @@
+@startuml
+class terminal{
+ConsultaVuelos()
+ReservaVuelos()
+CompraBillete()
+}
+class usuario{
+{field} Nombre 
+correo
+Contraseña
+VISA
+artesanos--|>ciudadanoRegistrar()
+Validacion()
+ValidacionTarjeta()
+ValidacionDNI()
+}
+class reserva{
+Codigo
+Usuario
+Vuelo
+FechaVuelo
+HoraVuelo
+Tarifa Float
+FechaReserva
+}
+class Vuelo{
+{field}Origen String
+Destino String
+Horario String
+Tarifa Float
+Codigo String
+Aerolinea 
+Informacion 
+AsientosList
+{method}VerAsientos()
+ObtenerAsientosDisponibles()
+}
+class Asiento{
+Numero
+Categoria String
+Estado(libre,ocupado)
+Tipo(Pasillo,Ventanilla,Salida)
+
+}
+class pasajero{
+
+Datos Pasajero
+Asiento
+
+}
+pasajero-->reserva
+reserva-->Asiento
+reserva-->Vuelo
+terminal-->Vuelo
+usuario-->pasajero
+@enduml

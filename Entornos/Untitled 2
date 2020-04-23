@@ -1,0 +1,13 @@
+@startuml
+:Internauta:
+(Crear un canal)
+(Hacer busqueda)
+(Registrarse)
+(Ver video)
+(Hacer/Editar video)
+(Suscripcion)
+( )
+
+
+@enduml
+

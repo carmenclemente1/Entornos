@@ -1,0 +1,20 @@
+@startuml
+class bancoFPbank{
+autorizacion_sistema
+abre_sistema()
+estudio_economico_del_cliente 
+estudio_casa
+mirar_hipoteca()
+}
+class cliente{
+datos_personales
+tasa_de_la_casa
+registro()
+documentacion()
+}
+class notario{
+firma_documentación_para_autorización
+}
+bancoFPbank--|>cliente
+bancoFPbank--|>notario
+@enduml

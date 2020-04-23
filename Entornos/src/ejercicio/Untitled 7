@@ -1,0 +1,28 @@
+@startuml
+:banco FPbank:
+usecase caso1 as "Autorizar sistema de gestion de hipotecas
+	--
+	abre solicitud debe salir los datos personales del solicitante 
+	--
+	tanto economicos y el precio del inmueble que quiere adquirir"
+	
+:banco FPbank: -->caso1
+:cliente:
+
+:banco FPbank:
+usecase caso2 as "estudio economico del cliente 
+	--
+	tasa de la casa" 
+:banco FPbank: -->caso2
+:banco FPbank:-->(pide documentación y registro de propiedad)
+
+usecase caso3 as " si el resultado negativo 
+	--
+	 denegar la hipoteca al cliente"
+:banco FPbank: -->caso3
+:notario:
+:notario:-->(firma documentación)	
+:cliente:-->caso3
+:cliente:-->caso2
+:banco FPbank: -->(firma documentación)
+@enduml

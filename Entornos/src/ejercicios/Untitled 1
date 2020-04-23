@@ -1,0 +1,18 @@
+@startuml
+Propietario->Contenedor:pone el codigo
+Contenedor->Inspector:envia codigo para verificar el propietario
+Inspector->Contenedor:identifica el propietario de la bolsa
+	alt realiza revision de reciclaje
+	Propietario->Contenedor:echa la bolsa
+	Inspector->Bolsa:es escaneada
+	Bolsa->Contenedor:reciclada
+	alt no es reciclada
+	Cuenta->Propietario:multa
+	Inspector->Madre:avisa a Madre
+	Madre->Bolsa:la expulsa 
+		end
+Inspector->Contenedor:la mantiene simpre cerrado
+	end
+
+
+@enduml

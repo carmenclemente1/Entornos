@@ -1,0 +1,94 @@
+@startuml
+
+class Usuario{
+username
+password
+loging()
+registro()
+}
+class ciudadano{
+Nombre
+Descendencia
+Indice_alegria
+vida 
+Dinero
+}
+Artesanos--|>Ciudadano
+Militar--|>Ciudadano
+Granjero--|>Ciudadano
+Tabernero--|>Ciudadano
+class artesanos{
+produccion
+vendeProductos()
+}
+class Militar{
+armas
+compraarmas()
+}
+class Granjero{
+produccion
+vendeProductor()
+}
+class Cura{
+EvitarFalsaProfeta
+}
+class Tabernero{
+taberna
+vendeProductos()
+}
+class Ciudad{
+indice_porsp
+list<ciudano>
+list<taberna>
+list<militar>
+{method}
+countCiudadano()
+countProduccion()
+addTberna()
+CountArmas()
+}
+class Partida{
+Usuarios
+fechaStart
+estado
+ciudad
+list<Jornada>
+crearciudad()
+guardarpartida()
+nuevajornada()
+}
+class Motor_juego{
+elige_evento_ocurre
+eventoaleatorio
+eleiminarpartida()
+crearpartida()
+cargarpartida(Partida)
+
+}
+class Evento{
+eventoSequia()
+eventoAtaqueBarbaro()
+EventoFalsoProfeta()
+peste()
+recueltaCalejera()
+nacimineto()
+recaudarImpuetos()
+}
+
+class Pregunta{
+pregunta
+respuesta()
+}
+class Jornada{
+list<Eventos>
+elegirEventoaleatori()
+}
+Ciudadano<-->Ciudad
+Usuario<-->Preguntas
+Jornada<->Evento
+Jornada<->Motor_juego
+Motor_juego<-->Partida
+Partida<->Ciudad
+
+
+@enduml

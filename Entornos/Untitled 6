@@ -1,0 +1,19 @@
+@startuml
+[*] --> vacio
+vacio -l-> articulo_solicitado
+articulo_solicitado --> personalizar_articulo
+personalizar_articulo --> vision_tridimensional
+personalizar_articulo --> vision_tridimensional_modificada
+vision_tridimensional --> cancelar_articulo
+vision_tridimensional_modificada --> cancelar_articulo
+vision_tridimensional_modificada --> pago_pedido
+cancelar_articulo -u-> vacio
+vision_tridimensional --> pago_pedido
+pago_pedido --> error_pago
+error_pago --> cancelar_articulo
+pago_pedido --> pedido_enviado
+pedido_enviado --> fallo_envio
+fallo_envio --> cancelar_articulo
+pedido_enviado --> entregado
+entregado --> [*]
+@enduml
